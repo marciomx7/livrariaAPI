@@ -81,7 +81,8 @@ public class LivrariaServlet extends HttpServlet {
 
 		String json = new Gson().toJson(list);
 
-		ServerUtils.responseText(json, response, HttpServletResponse.SC_OK);
+		//ServerUtils.responseText(json, response, HttpServletResponse.SC_OK);
+		ServerUtils.responseJson(json, response, HttpServletResponse.SC_OK);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
