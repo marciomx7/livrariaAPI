@@ -44,6 +44,10 @@ public class ServerUtils {
 		try {
 			response.setContentType("text/plain; charset=utf-8");
 			response.setStatus(status);
+		    response.setHeader("Access-Control-Allow-Origin", "*");
+		    response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+		    response.setHeader("Access-Control-Max-Age", "3600");
+		    response.setHeader("Access-Control-Allow-Headers", "x-requested-with");
 			PrintWriter out;
 			out = response.getWriter();
 			out.print(content);
@@ -60,6 +64,10 @@ public class ServerUtils {
 			response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");
 			response.setStatus(status);
+		    response.setHeader("Access-Control-Allow-Origin", "*");
+		    response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+		    response.setHeader("Access-Control-Max-Age", "3600");
+		    response.setHeader("Access-Control-Allow-Headers", "x-requested-with");
 			PrintWriter out;
 			out = response.getWriter();
 			out.print(content);
@@ -92,6 +100,7 @@ public class ServerUtils {
         response.setContentType(mimeType != null? mimeType:"application/octet-stream");
         response.setContentLength((int) file.length());
         response.setHeader("Content-Disposition", "attachment; filename=\"currentScore.jpg\"");
+        response.addHeader("Access-Control-Allow-Origin", "*");
         FileUtils.copyFile(file, response.getOutputStream());
 	}
 	
@@ -100,6 +109,7 @@ public class ServerUtils {
         response.setContentType(mimeType != null? mimeType:"application/octet-stream");
         response.setContentLength((int) file.length());
         response.setHeader("Content-Disposition", "attachment; filename=\""+file.getName()+"\"");
+        response.addHeader("Access-Control-Allow-Origin", "*");
         FileUtils.copyFile(file, response.getOutputStream());
 	}
 	

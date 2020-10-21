@@ -49,10 +49,18 @@ public class LivrariaServlet extends HttpServlet {
 			break;
 		}
 	}
+	
+	@Override
+    protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+ 
+        res.setHeader("Access-Control-Allow-Origin", req.getHeader("origin"));
+        res.setHeader("Access-Control-Allow-Headers", "Authorization"); 
+
+        super.service(req, res);
+    }
 
 	private void listOne(String categoria, HttpServletResponse response) {
 		System.out.println("Categoria : " +categoria);
-
 	    
 		MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb://localhost:27017"));
 		MongoDatabase database = mongoClient.getDatabase("Livraria");
