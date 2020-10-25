@@ -76,14 +76,14 @@ public interface LivrosController {
 	static Livros docToModel(Document doc) {
 		System.out.println(doc.toJson());
 		Morphia morphia = new Morphia();		
-		morphia.mapPackage("br.com.metrocamp.livraria.model");
+		morphia.mapPackage("com.bbtutorials.echo.model");
 
 		final Datastore datastore = morphia.createDatastore(new MongoClient(), "Livraria");
 		datastore.ensureIndexes();
 		
 		JSONObject obj = new JSONObject(doc.toJson());
 		
-		Livros livro = new Livros(obj.getInt("_id"),obj.getString("titulo"));
+		Livros livro = new Livros(obj.getInt("_idLivro"),obj.getString("Categoria"));
 
 		datastore.save(livro);
 		
