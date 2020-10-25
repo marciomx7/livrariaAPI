@@ -63,7 +63,7 @@ public class EchoController {
 
 		MongoCollection<Document> livros = database.getCollection("Livros");
 		
-		Bson query = Filters.eq("categoria", name);
+		Bson query = Filters.eq("Categoria", name);
 		
 		List<Livros> list = LivrosController.getSelectiveDocument(livros, query);
 
