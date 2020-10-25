@@ -10,91 +10,66 @@ import org.mongodb.morphia.annotations.Id;
 public class Livros {
 	
 	@Id	
-	private Integer id;
-	private String titulo;	
-	private String autor;	
-	private String editora;	
-	private String num_paginas;	
-	private String idiomas;	
-	private String isbn;	
-	private String ilustracao;	
-	private String indice;	
+	private Integer idLivro;
+	private String Nome;	
+	private String Valor;	
+	private String Categoria;	
+	private String idAutor;	
+	private String capa;	
 	
-	public Integer getId() {
-		return id;
+	public Integer getIdLivro() {
+		return idLivro;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setIdLivro(Integer idLivro) {
+		this.idLivro = idLivro;
 	}
 
-	public String getTitulo() {
-		return titulo;
+	public String getNome() {
+		return Nome;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+	public void setNome(String nome) {
+		Nome = nome;
 	}
 
-	public String getAutor() {
-		return autor;
+	public String getValor() {
+		return Valor;
 	}
 
-	public void setAutor(String autor) {
-		this.autor = autor;
+	public void setValor(String valor) {
+		Valor = valor;
 	}
 
-	public String getEditora() {
-		return editora;
+	public String getCategoria() {
+		return Categoria;
 	}
 
-	public void setEditora(String editora) {
-		this.editora = editora;
+	public void setCategoria(String categoria) {
+		Categoria = categoria;
 	}
 
-	public String getNum_paginas() {
-		return num_paginas;
+	public String getIdAutor() {
+		return idAutor;
 	}
 
-	public void setNum_paginas(String num_paginas) {
-		this.num_paginas = num_paginas;
+	public void setIdAutor(String idAutor) {
+		this.idAutor = idAutor;
 	}
 
-	public String getIdiomas() {
-		return idiomas;
+	public String getCapa() {
+		return capa;
 	}
 
-	public void setIdiomas(String idiomas) {
-		this.idiomas = idiomas;
+	public void setCapa(String capa) {
+		this.capa = capa;
 	}
 
-	public String getIsbn() {
-		return isbn;
-	}
 
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
-
-	public String getIlustracao() {
-		return ilustracao;
-	}
-
-	public void setIlustracao(String ilustracao) {
-		this.ilustracao = ilustracao;
-	}
-
-	public String getIndice() {
-		return indice;
-	}
-
-	public void setIndice(String indice) {
-		this.indice = indice;
-	}
 	
-	public Livros(Integer id, String titulo) {
-		this.id = id;
-		this.titulo = titulo;
+	public Livros(Integer idLivro, String Nome) {
+		this.idLivro = idLivro;
+		this.Nome = Nome;
 	}
 
 	public List<Livros> listLivros() {
