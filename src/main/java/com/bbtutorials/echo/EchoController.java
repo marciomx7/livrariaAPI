@@ -56,7 +56,7 @@ public class EchoController {
 		MongoDatabase database = mongoClient.getDatabase("Livraria");
 
 		Morphia morphia = new Morphia();
-		morphia.mapPackage("br.com.botcity.screenshotupload.model");
+		morphia.mapPackage("com.bbtutorials.echo.model");
 
 		final Datastore datastore = morphia.createDatastore(new MongoClient(), "Livraria");
 		datastore.ensureIndexes();

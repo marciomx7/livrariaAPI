@@ -64,12 +64,14 @@ public class Livros {
 	public void setCapa(String capa) {
 		this.capa = capa;
 	}
-
-
 	
-	public Livros(Integer id, String Nome) {
+	public Livros(Integer id, String Nome, String Categoria, String idAutor, String capa) {
 		this.id = id;
 		this.Nome = Nome;
+		this.Categoria = Categoria;		
+		this.idAutor = idAutor;
+		this.capa = capa;
+		
 	}
 
 	public List<Livros> listLivros() {
