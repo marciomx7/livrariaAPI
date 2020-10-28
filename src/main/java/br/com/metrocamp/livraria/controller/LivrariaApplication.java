@@ -1,4 +1,4 @@
-package br.com.metrocamp.livraria.view;
+package br.com.metrocamp.livraria.controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

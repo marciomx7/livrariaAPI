@@ -1,4 +1,4 @@
-package br.com.metrocamp.livraria.view;
+package br.com.metrocamp.livraria.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

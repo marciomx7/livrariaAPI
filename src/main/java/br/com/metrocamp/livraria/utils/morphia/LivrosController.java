@@ -82,9 +82,9 @@ public interface LivrosController {
 		
 		JSONObject obj = new JSONObject(doc.toJson());
 		
-		Livros livro = new Livros(obj.getInt("_id"),obj.getString("Nome"),obj.getString("Categoria"),obj.getString("idAutor"),obj.getString("capa"));
+		Livros livro = new Livros(obj.getInt("_id"),obj.getString("Nome"), obj.getString("Valor"),obj.getString("Categoria"),obj.getString("idAutor"),obj.getString("capa"));
 		
-		datastore.save(livro);
+	//	datastore.save(livro);
 		
 		return livro;
 	}
