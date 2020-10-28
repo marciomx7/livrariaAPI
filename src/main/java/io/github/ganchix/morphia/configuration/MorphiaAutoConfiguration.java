@@ -19,18 +19,12 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-/**
- * AutoConfiguration class.
- * <p>
- * Created by Rafa on 05/04/17.
- */
 @Configuration
 @AutoConfigureAfter(MongoAutoConfiguration.class)
 public class MorphiaAutoConfiguration {
 
     @Autowired
     private MongoClient mongoClient;
-
 
     @Autowired
     private MongoTemplate mongoTemplate;

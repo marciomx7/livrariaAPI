@@ -15,19 +15,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-/**
- * Utils class used in autoconfiguration.
- *
- * Created by Rafael Ríos on 4/05/17.
- */
+
 public class MorphiaUtils {
 
-    /**
-     * Return root package of spring boot application.
-     *
-     * @param applicationContext
-     * @return list of packages
-     */
     public static List<String> getApplicationPackageName(final ApplicationContext applicationContext) {
 
         Set<String> candidateClasses = new HashSet<>();
