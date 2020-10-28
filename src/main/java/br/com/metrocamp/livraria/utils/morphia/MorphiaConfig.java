@@ -1,4 +1,4 @@
-package com.bbtutorials.echo.morphia;
+package br.com.metrocamp.livraria.utils.morphia;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;

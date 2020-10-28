@@ -1,4 +1,4 @@
-package com.bbtutorials.echo;
+package br.com.metrocamp.livraria.controller;
 
 import java.util.List;
 
@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bbtutorials.echo.model.Livros;
-import com.bbtutorials.echo.morphia.LivrosController;
 import com.google.gson.Gson;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
@@ -19,8 +17,11 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 
+import br.com.metrocamp.livraria.model.Livros;
+import br.com.metrocamp.livraria.utils.morphia.LivrosController;
+
 @RestController
-public class EchoController {
+public class LivrariaController {
 	
 	@GetMapping("/app/list")
     public String ListAll() {
@@ -31,7 +32,7 @@ public class EchoController {
 		MongoDatabase database = mongoClient.getDatabase("Livraria");
 
 		Morphia morphia = new Morphia();
-		morphia.mapPackage("com.bbtutorials.echo.model");
+		morphia.mapPackage("br.com.metrocamp.livraria.model");
 
 		final Datastore datastore = morphia.createDatastore(new MongoClient(), "Livraria");
 		datastore.ensureIndexes();
@@ -63,7 +64,7 @@ public class EchoController {
 
 		MongoCollection<Document> livros = database.getCollection("Livros");
 		
-		Bson query = Filters.eq("Categoria", name);
+		Bson query = Filters.exists(name);
 		
 		List<Livros> list = LivrosController.getSelectiveDocument(livros, query);
 

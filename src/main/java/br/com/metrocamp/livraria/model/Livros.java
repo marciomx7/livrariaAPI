@@ -1,4 +1,4 @@
-package com.bbtutorials.echo.model;
+package br.com.metrocamp.livraria.model;
 
 import java.util.ArrayList;
 import java.util.List;

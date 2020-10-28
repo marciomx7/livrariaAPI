@@ -1,13 +1,13 @@
-package com.bbtutorials.echo;
+package br.com.metrocamp.livraria.view;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EchoApplication {
+public class LivrariaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EchoApplication.class, args);
+		SpringApplication.run(LivrariaApplication.class, args);
 	}
 
 }

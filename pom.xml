@@ -9,11 +9,11 @@
 		<version>2.2.6.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.bbtutorials</groupId>
-	<artifactId>echo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>echo</name>
-	<description>Demo project for Spring Boot</description>
+	<groupId>br.com.metrocamp.livraria</groupId>
+	<artifactId>livraria</artifactId>
+	<version>1.0</version>
+	<name>livraria</name>
+	<description>Projeto Livraria API</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -80,7 +80,7 @@
 							<goal>repackage</goal>
 						</goals>
 						<configuration>
-							<mainClass>com.bbtutorials.echo.EchoApplication</mainClass>
+							<mainClass>br.com.metrocamp.livraria.view.LivrariaApplication</mainClass>
 							<outputDirectory>${project.basedir}/docker</outputDirectory>
 						</configuration>
 					</execution>

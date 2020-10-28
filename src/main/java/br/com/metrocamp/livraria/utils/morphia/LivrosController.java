@@ -1,4 +1,4 @@
-package com.bbtutorials.echo.morphia;
+package br.com.metrocamp.livraria.utils.morphia;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,13 +9,12 @@ import org.json.JSONObject;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
 
-import com.bbtutorials.echo.model.Livros;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 
-
+import br.com.metrocamp.livraria.model.Livros;
 
 public interface LivrosController {
 	
