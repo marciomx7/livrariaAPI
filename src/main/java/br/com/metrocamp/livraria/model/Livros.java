@@ -65,9 +65,10 @@ public class Livros {
 		this.capa = capa;
 	}
 	
-	public Livros(Integer id, String Nome, String valor, String Categoria, String idAutor, String capa) {
+	public Livros(Integer id, String Nome, String Valor, String Categoria, String idAutor, String capa) {
 		this.id = id;
 		this.Nome = Nome;
+		this.Valor = Valor;
 		this.Categoria = Categoria;		
 		this.idAutor = idAutor;
 		this.capa = capa;

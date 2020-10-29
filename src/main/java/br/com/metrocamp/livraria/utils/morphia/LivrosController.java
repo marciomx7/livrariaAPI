@@ -59,32 +59,32 @@ public interface LivrosController {
     	
 
 	static List<Document> ToListDoc(MongoCursor<Document> cursor) {
-		List<Document> listErrors = new ArrayList<Document>();
+		List<Document> listdoc = new ArrayList<Document>();
 		while(cursor.hasNext()) {
 			Document doc = cursor.next();
-			listErrors.add(doc);	
+			listdoc.add(doc);	
 			if (cursor.hasNext()) {
 				continue;
 			}else {
 				break;
 			}
 		}		
-		return listErrors;
+		return listdoc;
 	}    
 	
 	static Livros docToModel(Document doc) {
 		System.out.println(doc.toJson());
 		Morphia morphia = new Morphia();		
-		morphia.mapPackage("com.bbtutorials.echo.model");
-
+		morphia.mapPackage("br.com.metrocamp.livraria.model");
+		
 		final Datastore datastore = morphia.createDatastore(new MongoClient(), "Livraria");
-		datastore.ensureIndexes();
+		datastore.ensureIndexes();		
 		
 		JSONObject obj = new JSONObject(doc.toJson());
 		
 		Livros livro = new Livros(obj.getInt("_id"),obj.getString("Nome"), obj.getString("Valor"),obj.getString("Categoria"),obj.getString("idAutor"),obj.getString("capa"));
 		
-	//	datastore.save(livro);
+		//datastore.save(livro);
 		
 		return livro;
 	}

@@ -48,23 +48,24 @@ public class LivrariaController {
 		 return json;
     }
 	
+
 	@GetMapping("/app/livro/{name}")
     public String ListOne(@PathVariable String name) {
 		
 		String json = "";	
-		
+	
 		MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb://localhost:27017"));
 		MongoDatabase database = mongoClient.getDatabase("Livraria");
 
 		Morphia morphia = new Morphia();
-		morphia.mapPackage("com.bbtutorials.echo.model");
+		morphia.mapPackage("br.com.metrocamp.livraria.model");
 
 		final Datastore datastore = morphia.createDatastore(new MongoClient(), "Livraria");
 		datastore.ensureIndexes();
 
 		MongoCollection<Document> livros = database.getCollection("Livros");
 		
-		Bson query = Filters.exists(name);
+		Bson query = Filters.regex("Categoria", ".*" + name + ".*");
 		
 		List<Livros> list = LivrosController.getSelectiveDocument(livros, query);
 
@@ -75,5 +76,5 @@ public class LivrariaController {
 		return json;
 		
 	}
-
+	
 }
