@@ -10,18 +10,18 @@ import org.mongodb.morphia.annotations.Id;
 public class Livros {
 	
 	@Id	
-	private Integer id;
+	private Object id;
 	private String Nome;	
 	private String Valor;	
 	private String Categoria;	
 	private String idAutor;	
 	private String capa;	
 	
-	public Integer getIdLivro() {
+	public Object getIdLivro() {
 		return id;
 	}
 
-	public void setIdLivro(Integer idLivro) {
+	public void setIdLivro(Object idLivro) {
 		this.id = idLivro;
 	}
 
@@ -65,7 +65,7 @@ public class Livros {
 		this.capa = capa;
 	}
 	
-	public Livros(Integer id, String Nome, String Valor, String Categoria, String idAutor, String capa) {
+	public Livros(Object id, String Nome, String Valor, String Categoria, String idAutor, String capa) {
 		this.id = id;
 		this.Nome = Nome;
 		this.Valor = Valor;

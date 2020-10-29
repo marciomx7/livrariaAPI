@@ -1,2 +1,2 @@
-# java-api-docker
-This is an example project how to dockerize the java API project
+# Livraria API
+Projeto Livraria - Metrocamp

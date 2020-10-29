@@ -6,6 +6,7 @@ import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +24,7 @@ import br.com.metrocamp.livraria.utils.morphia.LivrosController;
 @RestController
 public class LivrariaController {
 	
+	@CrossOrigin(origins = "http://localhost:8000")
 	@GetMapping("/app/list")
     public String ListAll() {
 		
